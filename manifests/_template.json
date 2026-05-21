@@ -1,0 +1,52 @@
+{
+  "$schema": "dmzopen-intake-manifest-v1",
+  "submission_id": "REQUIRED — <stack-slug>-<utc-yyyymmddThhmmssZ>",
+  "stack_name": "REQUIRED — one of: Claude Enterprise | Sovereign Enterprise | Perplexity",
+  "author": {
+    "name": "REQUIRED",
+    "role": "REQUIRED — e.g., AI Developer, Context HCP, etc.",
+    "contact": "REQUIRED — channel where Apex can reach you"
+  },
+  "spec_reference": {
+    "spec_id": "HCP-COLLECTOR-SPEC-00",
+    "spec_version": "REQUIRED",
+    "canon_commit": "REQUIRED — eve-glyph-archive commit SHA used as the build reference"
+  },
+  "build": {
+    "stack_components": ["REQUIRED — every model, framework, hosted service, on-prem component used"],
+    "languages": [],
+    "external_dependencies": [],
+    "hosting": "REQUIRED — where the build runs",
+    "data_residency": "REQUIRED — must be compatible with OneDrive-forbidden posture"
+  },
+  "canon_attestations": {
+    "no_psych_00": "REQUIRED — bool + one-line evidence pointer",
+    "reversibility_00": "REQUIRED — bool + path to revert.md",
+    "human_favor_00": "REQUIRED — bool + how operator authority is preserved",
+    "copyright_00": "REQUIRED — bool + IP assignment posture",
+    "propose_only": "REQUIRED — bool + how commits are gated to Apex",
+    "watermark": "REQUIRED — bool + watermark scheme used",
+    "onedrive_forbidden": "REQUIRED — bool + storage path",
+    "lock_honoring": "REQUIRED — bool + lock-handling evidence"
+  },
+  "surfaces": {
+    "primary_surface": "REQUIRED",
+    "dispatch_paths": [],
+    "apex_queue_integration": "REQUIRED — how items reach Apex"
+  },
+  "artifacts": [
+    {
+      "path": "relative-to-submission-folder",
+      "sha256": "hex",
+      "watermarked": true,
+      "sensitivity": "ip-sensitive | non-ip | telemetry"
+    }
+  ],
+  "revert": {
+    "procedure_path": "revert.md",
+    "blast_radius": "REQUIRED — what is touched",
+    "estimated_time_minutes": 0
+  },
+  "submitted_utc": "REQUIRED — ISO 8601",
+  "submitter_signature": "REQUIRED — SHA-256 of all artifact hashes concatenated in sort order"
+}
