@@ -431,3 +431,71 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 .footer-legal p { max-width: none; }
 .footer-legal .motto { font-family: var(--font-display); font-style: italic; font-size: var(--text-sm); color: var(--color-accent); margin-top: var(--space-2); }
 .footer-legal .seal { font-family: var(--font-mono); color: var(--color-text-muted); padding-top: var(--space-3); border-top: 1px solid var(--color-divider); margin-top: var(--space-3); }
+
+/* ---------- Work card grid (6-up, auto-fit) ---------- */
+.card-grid-work { grid-template-columns: repeat(3, 1fr); }
+.card-grid-work .card { min-height: 260px; }
+@media (max-width: 960px) { .card-grid-work { grid-template-columns: 1fr; } }
+
+/* ---------- Digital twin vector grid ---------- */
+.vector-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5);
+  margin-bottom: var(--space-12);
+}
+@media (max-width: 860px) { .vector-grid { grid-template-columns: 1fr; } }
+.vector {
+  position: relative;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; gap: var(--space-3);
+  overflow: hidden;
+}
+.vector::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+  background: var(--color-accent);
+}
+.vector-n {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent);
+}
+.vector h3 { font-size: var(--text-xl); font-weight: 500; letter-spacing: -0.015em; }
+.vector p { font-size: var(--text-sm); color: var(--color-text-muted); }
+.vector-folder {
+  margin-top: auto; align-self: flex-start;
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Twin CTA + more ---------- */
+.twin-cta {
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; gap: var(--space-6);
+}
+.twin-cta p { font-size: var(--text-lg); color: var(--color-text); max-width: 60ch; }
+.twin-cta .cta-row { margin-bottom: 0; }
+
+.twin-more { margin-top: var(--space-12); }
+.twin-more-label {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-faint);
+  margin-bottom: var(--space-4);
+}
+.twin-more-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+@media (max-width: 720px) { .twin-more-grid { grid-template-columns: 1fr; } }
+.twin-chip {
+  display: flex; flex-direction: column; gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none; color: inherit;
+  transition: all var(--transition-interactive);
+}
+.twin-chip:hover { border-color: var(--color-accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.twin-chip strong { font-size: var(--text-base); color: var(--color-text); font-weight: 600; }
+.twin-chip span { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
