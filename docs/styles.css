@@ -499,3 +499,18 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 .twin-chip:hover { border-color: var(--color-accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .twin-chip strong { font-size: var(--text-base); color: var(--color-text); font-weight: 600; }
 .twin-chip span { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+
+/* private-repository label — used where a listed repo is not publicly readable */
+.footer-list .tag,
+.prov-list .tag,
+li > .tag {
+  display: inline-block;
+  margin-left: 0.4em;
+  padding: 0.1em 0.5em;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.68em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
